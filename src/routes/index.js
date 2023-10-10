@@ -341,7 +341,7 @@ router.get('/api/modules/:id', async (req, res) => {
 });
 
 // Actualizar un módulo por su ID
-router.put('/api/modules/:id', isAdmin, async (req, res) => {
+router.put('/api/modules/:id', async (req, res) => {
   try {
     const { nombre, descripcion, imagen } = req.body;
     const updatedModule = await Module.findByIdAndUpdate(
@@ -359,7 +359,7 @@ router.put('/api/modules/:id', isAdmin, async (req, res) => {
 });
 
 // Eliminar un módulo por su ID
-router.delete('/api/modules/:id', isAdmin, async (req, res) => {
+router.delete('/api/modules/:id', async (req, res) => {
   try {
     const deletedModule = await Module.findByIdAndDelete(req.params.id);
     if (!deletedModule) {
@@ -416,7 +416,7 @@ router.get('/api/submodules/:id', async (req, res) => {
 });
 
 // Actualizar un tema por su ID
-router.put('/api/submodules/:id', isAdmin, async (req, res) => {
+router.put('/api/submodules/:id', async (req, res) => {
   try {
     const { nombre, descripcion } = req.body;
     const updatedSubmodule = await Submodule.findByIdAndUpdate(
@@ -434,7 +434,7 @@ router.put('/api/submodules/:id', isAdmin, async (req, res) => {
 });
 
 // Eliminar un tema por su ID
-router.delete('/api/submodules/:id', isAdmin, async (req, res) => {
+router.delete('/api/submodules/:id', async (req, res) => {
   try {
     const deletedSubmodule = await Submodule.findByIdAndDelete(req.params.id);
     if (!deletedSubmodule) {
@@ -493,7 +493,7 @@ router.get('/api/videos/:id', async (req, res) => {
 });
 
 // Actualizar un video por su ID
-router.put('/api/videos/:id', isAdmin, async (req, res) => {
+router.put('/api/videos/:id', async (req, res) => {
   try {
     const { title, description, url } = req.body;
     const updatedVideo = await Video.findByIdAndUpdate(
@@ -511,7 +511,7 @@ router.put('/api/videos/:id', isAdmin, async (req, res) => {
 });
 
 // Eliminar un video por su ID
-router.delete('/api/videos/:id', isAdmin, async (req, res) => {
+router.delete('/api/videos/:id', async (req, res) => {
   try {
     const deletedVideo = await Video.findByIdAndDelete(req.params.id);
     if (!deletedVideo) {
